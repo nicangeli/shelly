@@ -24,9 +24,7 @@ export default class GameContainer extends Component {
     }
   }
 
-  reset = () => {
-    this.setState(reset)
-  }
+  reset = () => this.setState(reset)
 
   render() {
     const { won, lost } = this.state
