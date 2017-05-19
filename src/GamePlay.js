@@ -1,12 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-// Flat Surface 
-// Shell
-
-const FlatSurface = styled.div`
-    display: flex;
-    width: 100%;
-`
+import Shuffler from './Shuffler'
 
 const Shell = styled.div`
     width: 100px;
@@ -19,23 +13,23 @@ const Shell = styled.div`
 `
 
 const GamePlay = ({handleSelection}) => (
-    <FlatSurface>
-        <Shell
-            color='crimson'
-            onClick={handleSelection(0)}>
-            Card 1
-        </Shell>
-        <Shell
-            color='teal'
-            onClick={handleSelection(1)}>
-            Card 2
-        </Shell>
-        <Shell
-            color='rebeccapurple'
-            onClick={handleSelection(2)}>
-            Card 3
-        </Shell>
-    </FlatSurface>
+        <Shuffler>
+            <Shell
+                color='crimson'
+                onClick={handleSelection(0)}>
+                Card 1
+            </Shell>
+            <Shell
+                color='teal'
+                onClick={handleSelection(1)}>
+                Card 2
+            </Shell>
+            <Shell
+                color='rebeccapurple'
+                onClick={handleSelection(2)}>
+                Card 3
+            </Shell>
+        </Shuffler>
 )
 
 export default GamePlay
