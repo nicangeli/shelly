@@ -4,8 +4,8 @@ import Game from './Game'
 
 import './GameContainer.css'
 
-const win = state => ({ ...state, won: true })
-const lose = state => ({ ...state, lost: true })
+const win = state => ({ won: true })
+const lose = state => ({ lost: true })
 const reset = state => ({ ballBeneath: randomCard(), won: false, lost: false})
 
 export default class GameContainer extends Component {
