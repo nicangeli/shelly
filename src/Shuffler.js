@@ -32,7 +32,7 @@ class Shuffler extends React.Component {
             )
         })
         return ( 
-            <div style={{position: 'relative'}}>
+            <div style={{position: 'relative', display: 'flex'}}>
                 {children}
             </div>
         )

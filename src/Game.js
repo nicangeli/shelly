@@ -5,6 +5,7 @@ import GamePlay from './GamePlay'
 const Game = ({
     finished,
     won,
+    ballBeneath,
     handleSelection,
     reset
 }) => (
@@ -15,6 +16,7 @@ const Game = ({
                 reset={reset}
                 won={won} /> :
             <GamePlay
+                ballBeneath={ballBeneath}
                 handleSelection={handleSelection} />
         }
     </div>

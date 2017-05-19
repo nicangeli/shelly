@@ -1,34 +1,21 @@
 import React from 'react'
-import styled from 'styled-components'
 import Shuffler from './Shuffler'
+import Shell from './Shell'
 
-const Shell = styled.div`
-    width: 100px;
-    height: 100px;
-    margin: 10px;
-    background-color: ${props => props.color}
-    display: flex;
-    align-items: center;
-    justify-content: center;
-`
-
-const GamePlay = ({handleSelection}) => (
+const GamePlay = ({ballBeneath, handleSelection}) => (
         <Shuffler>
             <Shell
-                color='crimson'
-                onClick={handleSelection(0)}>
-                Card 1
-            </Shell>
+                index={0}
+                ballBeneath={ballBeneath}
+                handleSelection={handleSelection} />
             <Shell
-                color='teal'
-                onClick={handleSelection(1)}>
-                Card 2
-            </Shell>
+                index={1}
+                ballBeneath={ballBeneath}
+                handleSelection={handleSelection} />
             <Shell
-                color='rebeccapurple'
-                onClick={handleSelection(2)}>
-                Card 3
-            </Shell>
+                index={2}
+                ballBeneath={ballBeneath}
+                handleSelection={handleSelection} />
         </Shuffler>
 )
 

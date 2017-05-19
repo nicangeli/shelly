@@ -26,7 +26,7 @@ it('toggles the finished prop when handleSelection is called', () => {
 it('should randomize the initially selected correct card index', () => {
   randomBetween0and2.mockImplementation(() => 'foo')
   const wrapper = shallow(<GameContainer />)
-  expect(wrapper.state().correct).toEqual('foo')
+  expect(wrapper.state().ballBeneath).toEqual('foo')
 })
 
 it('should reset the state when reset is called', () => {
@@ -38,12 +38,12 @@ it('should reset the state when reset is called', () => {
   const instance = wrapper.instance()
 
   instance.handleSelection(0)()
-  expect(wrapper.state().correct).toEqual(0)
+  expect(wrapper.state().ballBeneath).toEqual(0)
   expect(wrapper.state().won).toEqual(true)
   expect(wrapper.state().lost).toEqual(false)
 
   instance.reset()
-  expect(wrapper.state().correct).toEqual(1)
+  expect(wrapper.state().ballBeneath).toEqual(1)
   expect(wrapper.state().won).toEqual(false)
   expect(wrapper.state().lost).toEqual(false)
 })
