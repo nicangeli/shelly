@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import { randomBetween0and2 as randomCard } from './utils/random'
 import Game from './Game'
 
-import './GameContainer.css'
-
 const win = state => ({ won: true })
 const lose = state => ({ lost: true })
 const reset = state => ({ ballBeneath: randomCard(), won: false, lost: false})
