@@ -10,6 +10,7 @@ const Div = styled.div`
     color: white;
     align-items: center;
     justify-content: center;
+    transition: left 0.5s ease-out;
 `
 
 const fadeout = keyframes`
