@@ -1,23 +1,20 @@
 import React from 'react'
 import _ from 'lodash'
+import { setIntervalN } from './utils/setinterval'
 
 const WIDTH_OF_CARD = 200
 
 class Shuffler extends React.Component {
     state = {
-        transitioned: false
+        newOrderForChildren: _.range(0, React.Children.count(this.props.children))
     }
     componentDidMount () {
-        setTimeout(() => {
-            const childrenIndexes = _.range(0, React.Children.count(this.props.children))
-            const newOrderForChildren = _.shuffle(childrenIndexes)
-            this.setState({transitioned: true, newOrderForChildren})
-        }, 2000)
+        setIntervalN(() => {
+            const newOrderForChildren = _.shuffle(this.state.newOrderForChildren)
+            this.setState({newOrderForChildren})
+        }, 500, 5)
     }
     getPosition = (index) => {
-        if (!this.state.transitioned) {
-            return index * WIDTH_OF_CARD
-        }
        return this.state.newOrderForChildren[index] * WIDTH_OF_CARD
     }
     render () {
